@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		150E1C872DD29D2C004EDE9B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 150E1C862DD29D2C004EDE9B /* FirebaseAnalytics */; };
+		150E1C892DD29D33004EDE9B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 150E1C882DD29D33004EDE9B /* FirebaseCore */; };
+		150E1C8B2DD29D47004EDE9B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 150E1C8A2DD29D47004EDE9B /* FirebaseAuth */; };
+		150E1C8D2DD29D4F004EDE9B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 150E1C8C2DD29D4F004EDE9B /* FirebaseFirestore */; };
+		150E1C8F2DD29D60004EDE9B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 150E1C8E2DD29D60004EDE9B /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		150E1B2D2DD29934004EDE9B /* E-Bike Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-Bike Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +31,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				150E1C892DD29D33004EDE9B /* FirebaseCore in Frameworks */,
+				150E1C8D2DD29D4F004EDE9B /* FirebaseFirestore in Frameworks */,
+				150E1C8B2DD29D47004EDE9B /* FirebaseAuth in Frameworks */,
+				150E1C8F2DD29D60004EDE9B /* FirebaseStorage in Frameworks */,
+				150E1C872DD29D2C004EDE9B /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				150E1B2F2DD29934004EDE9B /* E-Bike Manager */,
+				150E1C852DD29D2C004EDE9B /* Frameworks */,
 				150E1B2E2DD29934004EDE9B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +57,13 @@
 				150E1B2D2DD29934004EDE9B /* E-Bike Manager.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		150E1C852DD29D2C004EDE9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +86,11 @@
 			);
 			name = "E-Bike Manager";
 			packageProductDependencies = (
+				150E1C862DD29D2C004EDE9B /* FirebaseAnalytics */,
+				150E1C882DD29D33004EDE9B /* FirebaseCore */,
+				150E1C8A2DD29D47004EDE9B /* FirebaseAuth */,
+				150E1C8C2DD29D4F004EDE9B /* FirebaseFirestore */,
+				150E1C8E2DD29D60004EDE9B /* FirebaseStorage */,
 			);
 			productName = "E-Bike Manager";
 			productReference = 150E1B2D2DD29934004EDE9B /* E-Bike Manager.app */;
@@ -94,6 +120,9 @@
 			);
 			mainGroup = 150E1B242DD29934004EDE9B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				150E1B3D2DD29A7A004EDE9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 150E1B2E2DD29934004EDE9B /* Products */;
 			projectDirPath = "";
@@ -265,9 +294,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.Maximsvid.E-Bike-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -292,9 +325,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.Maximsvid.E-Bike-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -320,6 +357,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		150E1B3D2DD29A7A004EDE9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		150E1C862DD29D2C004EDE9B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 150E1B3D2DD29A7A004EDE9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		150E1C882DD29D33004EDE9B /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 150E1B3D2DD29A7A004EDE9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		150E1C8A2DD29D47004EDE9B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 150E1B3D2DD29A7A004EDE9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		150E1C8C2DD29D4F004EDE9B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 150E1B3D2DD29A7A004EDE9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		150E1C8E2DD29D60004EDE9B /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 150E1B3D2DD29A7A004EDE9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 150E1B252DD29934004EDE9B /* Project object */;
 }
