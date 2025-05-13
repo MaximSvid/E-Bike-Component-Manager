@@ -17,6 +17,8 @@ class HomeViewModel: ObservableObject {
     
     @Published var isSheetNewComponentVisible: Bool = false
     
+    @Published var errorMessage: String?
+    
     private let homeViewRepo: HomeViewRepo
     
     init(homeViewRepo: HomeViewRepo = HomeViewRepoImplementation()) {
@@ -25,6 +27,23 @@ class HomeViewModel: ObservableObject {
     
     //fügt einen neun Component hinzu
     func addNewComponent() {
+        
+        guard !name.isEmpty else {
+            errorMessage = "Please enter the component name."
+            return
+        }
+        
+        guard !serialNumber.isEmpty else {
+            errorMessage = "Please enter the serial number."
+            return
+        }
+        
+        guard !version.isEmpty else {
+            errorMessage = "Please enter the version."
+            return
+        }
+        
+        
         let newComponent = Component(
             name: name,
             type: type,
@@ -36,13 +55,14 @@ class HomeViewModel: ObservableObject {
             try homeViewRepo.createNewComponent(components: newComponent)
             resetFields()
             isSheetNewComponentVisible = false
+            errorMessage = nil
         } catch {
             print("Error creating new component: \(error)")
         }
     }
     
     //setzt die Eingabefelder zurück
-    private func resetFields() {
+    func resetFields() {
         name = ""
         type = .motor
         serialNumber = ""

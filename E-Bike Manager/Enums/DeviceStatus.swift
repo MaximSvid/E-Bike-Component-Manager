@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-enum DeviceStatus: String, Codable {
+enum DeviceStatus: String, Codable, CaseIterable {
     case active = "Active"
     case inactive = "Inactive"
     case waiting = "Waiting"

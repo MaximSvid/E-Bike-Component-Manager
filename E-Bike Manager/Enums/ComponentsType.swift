@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ComponentsType: String, Codable {
+enum ComponentsType: String, Codable, CaseIterable {
     case motor = "Motor"
     case battery = "Battery"
     case wheels = "Wheels"

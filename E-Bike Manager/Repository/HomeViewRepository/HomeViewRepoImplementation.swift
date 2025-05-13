@@ -7,7 +7,8 @@
 import SwiftUI
 
 class HomeViewRepoImplementation: HomeViewRepo {
-        
+    
+//    private let db = FirebaseService.shared.database
     
     func createNewComponent(components: Component) throws {
         do {

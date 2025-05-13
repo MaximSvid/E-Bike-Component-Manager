@@ -11,35 +11,72 @@ struct SheetNewComponent: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-        ScrollView {
-            Text("New Component")
-                .font(.headline)
-                .padding([.top, .bottom])
-            
-            CustomTitleRow(title: "Component Name")
-            CustomTextField(placeholder: "Enter component name", text: $homeViewModel.name)
+//        ScrollView {
+            VStack {
+                Text("New Component")
+                    .font(.headline)
+                    .padding([.top, .bottom])
                 
-            CustomTitleRow(title: "Type")
-            //type soll enum sein
-            
-            CustomTitleRow(title: "Serial Number")
-            CustomTextField(placeholder: "Enter serial number", text: $homeViewModel.serialNumber)
-            
-            CustomTitleRow(title: "Version")
-            CustomTextField(placeholder: "Enter version", text: $homeViewModel.version)
-            
-            CustomTitleRow(title: "Status")
-            //status soll enum sein
-            
-            CustomMainButton(action: {
-                homeViewModel.addNewComponent()
-            }, title: "Create")
-            
+                
+                
+                // Komponentenname
+                CustomTitleRow(title: "Component Name")
+                    .padding(.top, 20)
+                CustomTextField(placeholder: "Enter component name", text: $homeViewModel.name)
+                    
+                // Typauswahl
+                HStack {
+                    CustomTitleRow(title: "Type")
+                    
+                    Spacer()
+                    
+                    Picker("Component Type", selection: $homeViewModel.type) {
+                        ForEach(ComponentsType.allCases, id: \.self) { type in
+                            Text(type.rawValue).tag(type)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .tint(.gray)
+
+                }
+                  
+                // Seriennummer
+                CustomTitleRow(title: "Serial Number")
+                CustomTextField(placeholder: "Enter serial number", text: $homeViewModel.serialNumber)
+                
+                // Version
+                CustomTitleRow(title: "Version")
+                CustomTextField(placeholder: "Enter version", text: $homeViewModel.version)
+                
+                // Status
+                CustomTitleRow(title: "Status")
+                Picker("Device Status", selection: $homeViewModel.status) {
+                    ForEach(DeviceStatus.allCases, id: \.self) { status in
+                        Text(status.rawValue).tag(status)
+                    }
+                }
+                .pickerStyle(.segmented)
+                
+                // Fehlermeldung
+                if let errorMessage = homeViewModel.errorMessage {
+                    Text(errorMessage)
+                        .font(.caption)
+                        .foregroundStyle(.red)
+                        .padding()
+                }
+                
+                Spacer()
+                
+                // Erstellen-Button
+                CustomMainButton(action: {
+                    homeViewModel.addNewComponent()
+                }, title: "Create")
+                .padding(.bottom)
+
+//            }                        
         }
         .padding([.trailing, .leading])
     }
 }
 
-#Preview {
-    SheetNewComponent()
-}
+

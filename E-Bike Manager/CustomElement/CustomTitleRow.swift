@@ -13,8 +13,9 @@ struct CustomTitleRow: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.body)
+                .font(.body.bold())
             Spacer()
         }
+        .padding(.top)
     }
 }

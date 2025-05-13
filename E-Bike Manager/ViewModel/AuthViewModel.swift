@@ -20,6 +20,7 @@ class AuthViewModel: ObservableObject {
     
     init(userRepo: UserRepo = UserRepoImplementation()) {
         self.userRepo = userRepo
+        
         setupAuthStateListener() // Richtet den Listener für Änderungen des Authentifizierungsstatus ein
     }
     
