@@ -1,0 +1,23 @@
+//
+//  CreateUserRepoImplementation.swift
+//  E-Bike Manager
+//
+//  Created by Maxim Svidrak on 13.05.25.
+//
+import SwiftUI
+import Firebase
+
+class CreateUserRepoImplementation: CreateUserRepo {
+    private let fb = FirebaseService.shared
+    func registerWithEmail(email: String, password: String) async throws {
+        let result = try await fb.auth.createUser(withEmail: email, password: password)
+        let user = FirebaseUser(id: result.user.uid)
+        
+        try fb.database
+            .collection("user")
+            .document(result.user.uid)
+            .setData(from: user)
+    }
+    
+    
+}

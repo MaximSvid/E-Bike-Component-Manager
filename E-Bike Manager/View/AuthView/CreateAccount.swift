@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct CreateAccount: View {
+    @StateObject var viewModel: AuthViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            CustomTextField(placeholder: "Enter your email", text: $viewModel.email)
+                .padding()
+            CustomTextField(placeholder: "Enter your password", text: $viewModel.password)
+                .padding()
+            CustomMainButton(action: {
+                Task {
+                  await viewModel.registerNewUser()
+                }
+            }, title: "Create Account")
+            .padding()
+        }
     }
 }
 
 #Preview {
-    CreateAccount()
+    //    CreateAccount()
 }
