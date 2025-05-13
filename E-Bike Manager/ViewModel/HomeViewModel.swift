@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class HomeViewModel: ObservableObject {
-    @Published var component: [Component] = []
+    @Published var components: [Component] = []
     
     @Published var name: String = ""
     @Published var type: ComponentsType = .motor
@@ -75,7 +75,7 @@ class HomeViewModel: ObservableObject {
         homeViewRepo.observeComponents { result in
             switch result {
             case .success(let component):
-                self.component = component
+                self.components = component
                 
             case .failure(let error):
                 print("Error observing components: \(error)")

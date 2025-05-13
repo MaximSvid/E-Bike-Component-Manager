@@ -10,10 +10,17 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
+    let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    
     var body: some View {
         NavigationView {
             VStack {
-                
+                ScrollView {
+                    ComponentsGrid(columns: columns)
+                }
+                .onAppear {
+                    homeViewModel.observeComponents()
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -35,6 +42,7 @@ struct HomeView: View {
                 SheetNewComponent()
                     .presentationDragIndicator(.visible)
                     .environmentObject(homeViewModel)
+                    .presentationDetents([.fraction(0.9)])
             }
         }
     }
