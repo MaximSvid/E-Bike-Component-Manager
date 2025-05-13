@@ -18,7 +18,7 @@ struct CustomTextField: View {
             .foregroundStyle(.black)
             .background(
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(isFocused ? .green : .blue, lineWidth: 1)
+                    .stroke(isFocused ? .gray : .black, lineWidth: 1)
             )
             .focused($isFocused)
             .padding(.bottom)
