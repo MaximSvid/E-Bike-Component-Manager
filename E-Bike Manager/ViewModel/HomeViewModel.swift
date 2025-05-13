@@ -9,6 +9,8 @@ import SwiftUI
 
 @MainActor
 class HomeViewModel: ObservableObject {
+    @Published var component: [Component] = []
+    
     @Published var name: String = ""
     @Published var type: ComponentsType = .motor
     @Published var serialNumber: String = ""
@@ -43,7 +45,6 @@ class HomeViewModel: ObservableObject {
             return
         }
         
-        
         let newComponent = Component(
             name: name,
             type: type,
@@ -68,6 +69,19 @@ class HomeViewModel: ObservableObject {
         serialNumber = ""
         version = ""
         status = .active
+    }
+    
+    func observeComponents() {
+        homeViewRepo.observeComponents { result in
+            switch result {
+            case .success(let component):
+                self.component = component
+                
+            case .failure(let error):
+                print("Error observing components: \(error)")
+            }
+            
+        }
     }
     
 }

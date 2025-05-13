@@ -11,7 +11,7 @@ struct SheetNewComponent: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-            VStack {
+        VStack(spacing: 12) {
                 Text("New Component")
                     .font(.headline)
                     .padding([.top, .bottom])
@@ -20,7 +20,6 @@ struct SheetNewComponent: View {
                 
                 // Komponentenname
                 CustomTitleRow(title: "Component Name")
-                    .padding(.top, 20)
                 CustomTextField(placeholder: "Enter component name", text: $homeViewModel.name)
                     
                 // Typauswahl
@@ -36,6 +35,7 @@ struct SheetNewComponent: View {
                     }
                     .pickerStyle(.menu)
                     .tint(.gray)
+                    .padding(.bottom)
 
                 }
                   
@@ -46,6 +46,7 @@ struct SheetNewComponent: View {
                 // Version
                 CustomTitleRow(title: "Version")
                 CustomTextField(placeholder: "Enter version", text: $homeViewModel.version)
+
                 
                 // Status
                 CustomTitleRow(title: "Status")
@@ -55,6 +56,7 @@ struct SheetNewComponent: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                .padding(.bottom)
                 
                 // Fehlermeldung
                 if let errorMessage = homeViewModel.errorMessage {
@@ -70,7 +72,7 @@ struct SheetNewComponent: View {
                 CustomMainButton(action: {
                     homeViewModel.addNewComponent()
                 }, title: "Create")
-                .padding(.bottom)
+                .padding(.bottom, 12)
         }
         .padding([.trailing, .leading])
     }

@@ -21,6 +21,7 @@ struct CustomTextField: View {
                     .stroke(isFocused ? .green : .blue, lineWidth: 1)
             )
             .focused($isFocused)
+            .padding(.bottom)
     }
 }
 
