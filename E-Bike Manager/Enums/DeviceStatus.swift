@@ -21,4 +21,15 @@ enum DeviceStatus: String, Codable, CaseIterable {
             return .yellow
         }
     }
+    
+    var sortOrder: Int {
+        switch self {
+        case .active:
+            return 0
+        case .waiting:
+            return 1
+        case .inactive:
+            return 2
+        }
+    }
 }

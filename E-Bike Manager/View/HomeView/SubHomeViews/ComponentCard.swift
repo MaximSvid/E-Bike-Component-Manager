@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ComponentCard: View {
+    @EnvironmentObject var homeViewModel: HomeViewModel
     let component: Component // Daten für die Karte
     
     var body: some View {
@@ -43,6 +44,21 @@ struct ComponentCard: View {
             Spacer()
             
             HStack {
+                Button(action: {
+                    homeViewModel.deleteComponent(component: component)
+                }) {
+                    Image(systemName: "trash")
+                        .font(.headline)
+                        .foregroundStyle(.red)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                        .padding(4)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(.gray, lineWidth: 1)
+                        )
+                        .shadow(radius: 3)
+                }
+                
                 Spacer()
                 Text("Version: \(component.version)")
                     .font(.caption)
@@ -52,7 +68,7 @@ struct ComponentCard: View {
             .padding(.bottom)
         }
         .padding(.leading, 8)
-        .frame(width: 170, height: 150)
+        .frame(width: 170, height: 170)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 5))
         .shadow(radius: 3)

@@ -75,13 +75,35 @@ class HomeViewModel: ObservableObject {
         homeViewRepo.observeComponents { result in
             switch result {
             case .success(let component):
-                self.components = component
+                self.components = component.sorted {$0.status.sortOrder < $1.status.sortOrder} //sortierung nach status
                 
             case .failure(let error):
                 print("Error observing components: \(error)")
             }
             
         }
+    }
+    
+    //Entfernt einen Component
+    func deleteComponent(component: Component) {
+        guard let componentId = component.id else {
+            print("Error deleting component: componentId is nil")
+            return
+        }
+        
+        homeViewRepo.deleteComponent(componentId: componentId) { result in
+            switch result {
+            case .success:
+                if let index = self.components.firstIndex(where: { $0.id == componentId}) {
+                    self.components.remove(at: index)
+                }
+                print("Component deleted successfully")
+                
+            case .failure(let error):
+                print("Error deleting component: \(error)")
+            }
+        }
+        
     }
     
 }

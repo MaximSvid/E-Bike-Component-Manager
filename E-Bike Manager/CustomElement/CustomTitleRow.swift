@@ -16,6 +16,6 @@ struct CustomTitleRow: View {
                 .font(.body.bold())
             Spacer()
         }
-        .padding(.top)
+//        .padding(.top)
     }
 }

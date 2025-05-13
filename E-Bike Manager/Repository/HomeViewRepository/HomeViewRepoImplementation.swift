@@ -31,7 +31,7 @@ class HomeViewRepoImplementation: HomeViewRepo {
         
         //überprufen ob user Exsetiert
         guard let userId = Auth.auth().currentUser?.uid else {
-            completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey : "No user logged in"])))
+            print("Error: No user logged in")
             return
         }
         // Beobachtet Änderungen in der Firestore-Collection "components"
@@ -61,11 +61,25 @@ class HomeViewRepoImplementation: HomeViewRepo {
                 }
                 // Gibt erfolgreich geladene Komponenten zurück
                 completion(.success(components))
-        }
+            }
     }
     
+    //func um component zu löchen
     func deleteComponent(componentId: String, completion: @escaping (Result<Void, any Error>) -> Void) {
-        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
+        db.collection("users")
+            .document(userId)
+            .collection("components")
+            .document(componentId)
+            .delete { error in
+                if let error {
+                    completion(.failure(error))
+                    return
+                }
+                completion(.success(()))
+            }
     }
     
     func updateComponent(components: Component) throws {
