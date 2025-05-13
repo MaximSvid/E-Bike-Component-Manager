@@ -14,14 +14,38 @@
 		150E1C8F2DD29D60004EDE9B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 150E1C8E2DD29D60004EDE9B /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		158C5B4B2DD3EAE700602F75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 150E1B252DD29934004EDE9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 150E1B2C2DD29934004EDE9B;
+			remoteInfo = "E-Bike Manager";
+		};
+		158C5B582DD3EB7F00602F75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 150E1B252DD29934004EDE9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 150E1B2C2DD29934004EDE9B;
+			remoteInfo = "E-Bike Manager";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		150E1B2D2DD29934004EDE9B /* E-Bike Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-Bike Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		158C5B472DD3EAE600602F75 /* E-Bike ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "E-Bike ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		158C5B542DD3EB7F00602F75 /* MyXCTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyXCTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		150E1B2F2DD29934004EDE9B /* E-Bike Manager */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "E-Bike Manager";
+			sourceTree = "<group>";
+		};
+		158C5B552DD3EB7F00602F75 /* MyXCTest */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyXCTest;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -39,6 +63,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		158C5B442DD3EAE600602F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158C5B512DD3EB7F00602F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				150E1B2F2DD29934004EDE9B /* E-Bike Manager */,
+				158C5B552DD3EB7F00602F75 /* MyXCTest */,
 				150E1C852DD29D2C004EDE9B /* Frameworks */,
 				150E1B2E2DD29934004EDE9B /* Products */,
 			);
@@ -55,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				150E1B2D2DD29934004EDE9B /* E-Bike Manager.app */,
+				158C5B472DD3EAE600602F75 /* E-Bike ManagerTests.xctest */,
+				158C5B542DD3EB7F00602F75 /* MyXCTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +137,49 @@
 			productReference = 150E1B2D2DD29934004EDE9B /* E-Bike Manager.app */;
 			productType = "com.apple.product-type.application";
 		};
+		158C5B462DD3EAE600602F75 /* E-Bike ManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 158C5B4D2DD3EAE700602F75 /* Build configuration list for PBXNativeTarget "E-Bike ManagerTests" */;
+			buildPhases = (
+				158C5B432DD3EAE600602F75 /* Sources */,
+				158C5B442DD3EAE600602F75 /* Frameworks */,
+				158C5B452DD3EAE600602F75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				158C5B4C2DD3EAE700602F75 /* PBXTargetDependency */,
+			);
+			name = "E-Bike ManagerTests";
+			packageProductDependencies = (
+			);
+			productName = "E-Bike ManagerTests";
+			productReference = 158C5B472DD3EAE600602F75 /* E-Bike ManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		158C5B532DD3EB7F00602F75 /* MyXCTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 158C5B5A2DD3EB7F00602F75 /* Build configuration list for PBXNativeTarget "MyXCTest" */;
+			buildPhases = (
+				158C5B502DD3EB7F00602F75 /* Sources */,
+				158C5B512DD3EB7F00602F75 /* Frameworks */,
+				158C5B522DD3EB7F00602F75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				158C5B592DD3EB7F00602F75 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				158C5B552DD3EB7F00602F75 /* MyXCTest */,
+			);
+			name = MyXCTest;
+			packageProductDependencies = (
+			);
+			productName = MyXCTest;
+			productReference = 158C5B542DD3EB7F00602F75 /* MyXCTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -108,6 +192,14 @@
 				TargetAttributes = {
 					150E1B2C2DD29934004EDE9B = {
 						CreatedOnToolsVersion = 16.3;
+					};
+					158C5B462DD3EAE600602F75 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 150E1B2C2DD29934004EDE9B;
+					};
+					158C5B532DD3EB7F00602F75 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 150E1B2C2DD29934004EDE9B;
 					};
 				};
 			};
@@ -129,12 +221,28 @@
 			projectRoot = "";
 			targets = (
 				150E1B2C2DD29934004EDE9B /* E-Bike Manager */,
+				158C5B462DD3EAE600602F75 /* E-Bike ManagerTests */,
+				158C5B532DD3EB7F00602F75 /* MyXCTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		150E1B2B2DD29934004EDE9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158C5B452DD3EAE600602F75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158C5B522DD3EB7F00602F75 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -151,7 +259,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		158C5B432DD3EAE600602F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158C5B502DD3EB7F00602F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		158C5B4C2DD3EAE700602F75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 150E1B2C2DD29934004EDE9B /* E-Bike Manager */;
+			targetProxy = 158C5B4B2DD3EAE700602F75 /* PBXContainerItemProxy */;
+		};
+		158C5B592DD3EB7F00602F75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 150E1B2C2DD29934004EDE9B /* E-Bike Manager */;
+			targetProxy = 158C5B582DD3EB7F00602F75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		150E1B362DD29935004EDE9B /* Debug */ = {
@@ -335,6 +470,74 @@
 			};
 			name = Release;
 		};
+		158C5B4E2DD3EAE700602F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.Maximsvid.E-Bike-ManagerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/E-Bike Manager.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/E-Bike Manager";
+			};
+			name = Debug;
+		};
+		158C5B4F2DD3EAE700602F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.Maximsvid.E-Bike-ManagerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/E-Bike Manager.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/E-Bike Manager";
+			};
+			name = Release;
+		};
+		158C5B5B2DD3EB7F00602F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.Maximsvid.MyXCTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/E-Bike Manager.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/E-Bike Manager";
+			};
+			name = Debug;
+		};
+		158C5B5C2DD3EB7F00602F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.Maximsvid.MyXCTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/E-Bike Manager.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/E-Bike Manager";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -352,6 +555,24 @@
 			buildConfigurations = (
 				150E1B392DD29935004EDE9B /* Debug */,
 				150E1B3A2DD29935004EDE9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		158C5B4D2DD3EAE700602F75 /* Build configuration list for PBXNativeTarget "E-Bike ManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				158C5B4E2DD3EAE700602F75 /* Debug */,
+				158C5B4F2DD3EAE700602F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		158C5B5A2DD3EB7F00602F75 /* Build configuration list for PBXNativeTarget "MyXCTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				158C5B5B2DD3EB7F00602F75 /* Debug */,
+				158C5B5C2DD3EB7F00602F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
