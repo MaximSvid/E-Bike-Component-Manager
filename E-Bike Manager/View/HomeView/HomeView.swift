@@ -18,6 +18,16 @@ struct HomeView: View {
                     Text("E-Bike components")
                         .font(.headline)
                 }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        
+                    }) {
+                        Image(systemName: "plus.app")
+                            .font(.headline)
+                            .foregroundStyle(.blue)
+                    }
+                }
             }
         }
     }
