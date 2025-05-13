@@ -7,7 +7,7 @@
 import SwiftUI
 import Firebase
 
-class CreateUserRepoImplementation: CreateUserRepo {
+class UserRepoImplementation: UserRepo {
     private let fb = FirebaseService.shared
     func registerWithEmail(email: String, password: String) async throws {
         let result = try await fb.auth.createUser(withEmail: email, password: password)
@@ -18,6 +18,4 @@ class CreateUserRepoImplementation: CreateUserRepo {
             .document(result.user.uid)
             .setData(from: user)
     }
-    
-    
 }

@@ -14,13 +14,13 @@
 import SwiftUI
 import FirebaseFirestore
 
-struct Components: Codable {
+struct Component: Codable {
     @DocumentID var id: String? //virwaltet die Dokument-ID
     
     var image: String = "" // wenn ich Zeit habe...
     var name: String
     var type: ComponentsType
-    var serialNumber: Int
+    var serialNumber: String
     var version: String
     var status: DeviceStatus
     

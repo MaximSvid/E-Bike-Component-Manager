@@ -6,11 +6,11 @@
 //
 
 protocol HomeViewRepo {
-    func createNewComponent(componentsType: ComponentsType) throws
+    func createNewComponent(components: Component) throws
     
-    func observeComponents(completion: @escaping (Result<[ComponentsType], Error>) -> Void)
+    func observeComponents(completion: @escaping (Result<[Component], Error>) -> Void)
     
     func deleteComponent(componentId: String, completion: @escaping (Result<Void, Error>) -> Void)
     
-    func updateComponent(componentsType: ComponentsType) throws 
+    func updateComponent(components: Component) throws
 }

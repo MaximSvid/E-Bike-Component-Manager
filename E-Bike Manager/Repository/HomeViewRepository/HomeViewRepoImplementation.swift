@@ -7,16 +7,17 @@
 import SwiftUI
 
 class HomeViewRepoImplementation: HomeViewRepo {
+        
     
-    func createNewComponent(componentsType: ComponentsType) throws {
+    func createNewComponent(components: Component) throws {
         do {
-            try FirebaseService.shared.database.collection("components").addDocument(from: componentsType)
+            try FirebaseService.shared.database.collection("components").addDocument(from: components)
         } catch {
             throw error
         }
     }
     
-    func observeComponents(completion: @escaping (Result<[ComponentsType], any Error>) -> Void) {
+    func observeComponents(completion: @escaping (Result<[Component], any Error>) -> Void) {
         
     }
     
@@ -24,9 +25,8 @@ class HomeViewRepoImplementation: HomeViewRepo {
         
     }
     
-    func updateComponent(componentsType: ComponentsType) throws {
-        
+    func updateComponent(components: Component) throws {
+        <#code#>
     }
-    
     
 }

@@ -16,10 +16,10 @@ class AuthViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     
-    private let createUserRepo: CreateUserRepo
+    private let userRepo: UserRepo
     
-    init(createUserRepo: CreateUserRepo = CreateUserRepoImplementation()) {
-        self.createUserRepo = createUserRepo
+    init(userRepo: UserRepo = UserRepoImplementation()) {
+        self.userRepo = userRepo
     }
     
     func registerNewUser() async {
@@ -27,7 +27,7 @@ class AuthViewModel: ObservableObject {
             return
         }
         do {
-            try await createUserRepo.registerWithEmail(email: email, password: password)
+            try await userRepo.registerWithEmail(email: email, password: password)
             email = ""
             password = ""
         } catch {
