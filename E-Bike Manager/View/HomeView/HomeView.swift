@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var homeViewModel: HomeViewModel
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -28,6 +30,11 @@ struct HomeView: View {
                             .foregroundStyle(.blue)
                     }
                 }
+            }
+            .sheet(isPresented: $homeViewModel.isSheetNewComponentVisible) {
+                SheetNewComponent()
+                    .presentationDragIndicator(.visible)
+                    .environmentObject(homeViewModel)
             }
         }
     }

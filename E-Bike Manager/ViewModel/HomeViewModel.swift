@@ -15,6 +15,8 @@ class HomeViewModel: ObservableObject {
     @Published var version: String = ""
     @Published var status: DeviceStatus = .active
     
+    @Published var isSheetNewComponentVisible: Bool = false
+    
     private let homeViewRepo: HomeViewRepo
     
     init(homeViewRepo: HomeViewRepo = HomeViewRepoImplementation()) {

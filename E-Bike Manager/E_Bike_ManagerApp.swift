@@ -24,7 +24,10 @@ struct E_Bike_ManagerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CreateAccount(viewModel: AuthViewModel())
+            CreateAccount(
+                authViewModel: AuthViewModel(),
+                homeViewModel: HomeViewModel()
+            )
         }
     }
 }

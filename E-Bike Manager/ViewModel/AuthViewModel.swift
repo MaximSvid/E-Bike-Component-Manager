@@ -34,4 +34,10 @@ class AuthViewModel: ObservableObject {
             print("Error registering user: \(error)")
         }
     }
+    
+    // Gibt zurück, ob ein Benutzer angemeldet ist
+    var userIsLoggedIn: Bool {
+        user != nil
+    }
+
 }
