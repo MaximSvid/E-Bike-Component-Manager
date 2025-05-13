@@ -5,14 +5,24 @@
 //  Created by Maxim Svidrak on 13.05.25.
 //
 import SwiftUI
+import FirebaseAuth
 
 class HomeViewRepoImplementation: HomeViewRepo {
     
-//    private let db = FirebaseService.shared.database
+    private let db = FirebaseService.shared.database
     
     func createNewComponent(components: Component) throws {
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey : "No user logged in"])
+        }
         do {
-            try FirebaseService.shared.database.collection("components").addDocument(from: components)
+            try db
+                .collection("users")
+                .document(userId)
+                .collection("components")
+                .addDocument(from: components)
+//            try FirebaseService.shared.database.collection("components").addDocument(from: components)
         } catch {
             throw error
         }

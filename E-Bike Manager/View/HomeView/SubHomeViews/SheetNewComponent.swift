@@ -11,7 +11,6 @@ struct SheetNewComponent: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-//        ScrollView {
             VStack {
                 Text("New Component")
                     .font(.headline)
@@ -72,8 +71,6 @@ struct SheetNewComponent: View {
                     homeViewModel.addNewComponent()
                 }, title: "Create")
                 .padding(.bottom)
-
-//            }                        
         }
         .padding([.trailing, .leading])
     }

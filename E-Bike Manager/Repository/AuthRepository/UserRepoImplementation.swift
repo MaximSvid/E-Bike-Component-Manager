@@ -14,7 +14,7 @@ class UserRepoImplementation: UserRepo {
         let user = FirebaseUser(id: result.user.uid)
         
         try fb.database
-            .collection("user")
+            .collection("users")
             .document(result.user.uid)
             .setData(from: user)
     }
