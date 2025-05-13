@@ -10,6 +10,7 @@ import SwiftUI
 @MainActor
 class HomeViewModel: ObservableObject {
     @Published var components: [Component] = []
+    @Published var selectedComponent: Component?
     
     @Published var name: String = ""
     @Published var type: ComponentsType = .motor
@@ -18,6 +19,7 @@ class HomeViewModel: ObservableObject {
     @Published var status: DeviceStatus = .active
     
     @Published var isSheetNewComponentVisible: Bool = false
+    @Published var isSheetEditComponentVisible: Bool = false
     
     @Published var errorMessage: String?
     
@@ -103,7 +105,44 @@ class HomeViewModel: ObservableObject {
                 print("Error deleting component: \(error)")
             }
         }
-        
     }
+    
+    // Bereitet einen Component für die Bearbeitung vor
+    func prepareForEdit(_ component: Component) {
+        self.selectedComponent = component
+        self.name = component.name
+        self.type = component.type
+        self.serialNumber = component.serialNumber
+        self.version = component.version
+        self.status = component.status
+    }
+    
+    // Aktualisiert einen bestehenden Component
+    func updateComponent() {
+        guard let existingComponent = selectedComponent,
+              let componentId = existingComponent.id else {
+            print("Error updating component: componentId is nil")
+            return
+        }
+        
+        let updatedComponent = Component(
+            id: componentId,
+            name: name,
+            type: type,
+            serialNumber: serialNumber,
+            version: version,
+            status: status
+        )
+        do {
+            try homeViewRepo.updateComponent(components: updatedComponent)
+            if let index = components.firstIndex(where: {$0.id == existingComponent.id} ) {
+                components[index] = updatedComponent
+                print("Component updated successfully")
+            }
+        } catch {
+            print("Error updating component: \(error)")
+        }
+    }
+    
     
 }

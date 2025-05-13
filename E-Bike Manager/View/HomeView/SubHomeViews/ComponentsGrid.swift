@@ -14,9 +14,9 @@ struct ComponentsGrid: View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: 10) {
             ForEach(homeViewModel.components, id: \.id) { component in
-//                NavigationLink(destination: HomeDetailView(component: component)) {
+                NavigationLink(destination: HomeDetailView(component: component)) {
                     ComponentCard(component: component)
-//                }
+                }
             }
         }
         .padding(.horizontal, 16)

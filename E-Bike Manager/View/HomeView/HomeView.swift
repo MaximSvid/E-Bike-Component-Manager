@@ -19,7 +19,8 @@ struct HomeView: View {
                     ComponentsGrid(columns: columns)
                 }
                 .onAppear {
-                    homeViewModel.observeComponents() // может здесь проблема
+                    //onAppear für daten inizializierung
+                    homeViewModel.observeComponents()
                 }
             }
             .toolbar {

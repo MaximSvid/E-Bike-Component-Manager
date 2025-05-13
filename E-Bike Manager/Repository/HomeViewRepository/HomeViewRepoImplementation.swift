@@ -69,6 +69,8 @@ class HomeViewRepoImplementation: HomeViewRepo {
         guard let userId = Auth.auth().currentUser?.uid else {
             return
         }
+        
+        
         db.collection("users")
             .document(userId)
             .collection("components")
@@ -82,8 +84,28 @@ class HomeViewRepoImplementation: HomeViewRepo {
             }
     }
     
+    // Aktualisiert eine bestehende Komponente in Firestore.
     func updateComponent(components: Component) throws {
+        // Prüft, ob ein Benutzer angemeldet ist
+        guard let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
         
+        // Prüft, ob die Komponente eine gültige ID hat
+        guard let componentId = components.id else {
+            return
+        }
+        // Aktualisiert das Dokument in der Firestore
+        do {
+            try db.collection("users")
+                .document(userId)
+                .collection("components")
+                .document(componentId)
+                .setData(from: components, merge: true) // Merge: true sorgt dafür, dass nur geänderte Felder aktualisiert werden
+        } catch {
+            print("Error updating document \(error)")
+            throw error
+        }
     }
     
 }
