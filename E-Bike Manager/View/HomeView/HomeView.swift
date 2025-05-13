@@ -21,13 +21,13 @@ struct HomeView: View {
                         .font(.headline)
                 }
                 
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        
+                        homeViewModel.isSheetNewComponentVisible = true
                     }) {
                         Image(systemName: "plus.app")
                             .font(.headline)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(.black)
                     }
                 }
             }

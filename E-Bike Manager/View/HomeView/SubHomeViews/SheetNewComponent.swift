@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SheetNewComponent: View {
+    @EnvironmentObject private var homeViewModel: HomeViewModel
+    
     var body: some View {
         ScrollView {
             Text("New Component")
@@ -15,21 +17,23 @@ struct SheetNewComponent: View {
                 .padding([.top, .bottom])
             
             CustomTitleRow(title: "Component Name")
-            CustomTextField(placeholder: "Enter component name", text: .constant(""))
+            CustomTextField(placeholder: "Enter component name", text: $homeViewModel.name)
                 
             CustomTitleRow(title: "Type")
             //type soll enum sein
             
             CustomTitleRow(title: "Serial Number")
-            CustomTextField(placeholder: "Enter serial number", text: .constant(""))
+            CustomTextField(placeholder: "Enter serial number", text: $homeViewModel.serialNumber)
             
             CustomTitleRow(title: "Version")
-            CustomTextField(placeholder: "Enter version", text: .constant(""))
+            CustomTextField(placeholder: "Enter version", text: $homeViewModel.version)
             
             CustomTitleRow(title: "Status")
             //status soll enum sein
             
-            CustomMainButton(action: {}, title: "Create")
+            CustomMainButton(action: {
+                homeViewModel.addNewComponent()
+            }, title: "Create")
             
         }
         .padding([.trailing, .leading])

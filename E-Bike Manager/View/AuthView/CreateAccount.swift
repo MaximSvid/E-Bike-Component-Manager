@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct CreateAccount: View {
-    @StateObject var authViewModel: AuthViewModel
-    @StateObject var homeViewModel: HomeViewModel
+//    @StateObject var authViewModel: AuthViewModel
+//    @StateObject var homeViewModel: HomeViewModel
+    @EnvironmentObject private var authViewModel: AuthViewModel
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
         

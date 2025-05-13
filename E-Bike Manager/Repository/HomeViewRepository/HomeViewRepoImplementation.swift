@@ -26,7 +26,7 @@ class HomeViewRepoImplementation: HomeViewRepo {
     }
     
     func updateComponent(components: Component) throws {
-        <#code#>
+        
     }
     
 }

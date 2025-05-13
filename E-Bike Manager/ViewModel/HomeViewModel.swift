@@ -35,6 +35,7 @@ class HomeViewModel: ObservableObject {
         do {
             try homeViewRepo.createNewComponent(components: newComponent)
             resetFields()
+            isSheetNewComponentVisible = false
         } catch {
             print("Error creating new component: \(error)")
         }
