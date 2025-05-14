@@ -2,21 +2,28 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
 
 name: Swift
-
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
 jobs:
   build:
-
     runs-on: macos-latest
-
     steps:
     - uses: actions/checkout@v4
-    - name: Build
-      run: swift build -v
+    - name: Find Package.swift
+      run: find . -name "Package.swift"
+    - name: Navigate to Package Directory
+      run: |
+        PACKAGE_DIR=$(find . -name "Package.swift" -exec dirname {} \; | head -n 1)
+        echo "Found Package.swift in $PACKAGE_DIR"
+        cd "$PACKAGE_DIR"
+        pwd
+        swift build -v
     - name: Run tests
-      run: swift test -v
+      run: |
+        PACKAGE_DIR=$(find . -name "Package.swift" -exec dirname {} \; | head -n 1)
+        cd "$PACKAGE_DIR"
+        swift test -v
+
