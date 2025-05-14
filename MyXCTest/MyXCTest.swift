@@ -111,7 +111,7 @@ final class MyXCTest: XCTestCase {
         XCTAssertTrue(mockRepo.deleteComponentCalled)
 
         await MainActor.run {
-            XCTAssertEqual(viewModel.components.count, 1) // компонент не удалён
+            XCTAssertEqual(viewModel.components.count, 1) // компонент не удалён!
         }
     }
     
