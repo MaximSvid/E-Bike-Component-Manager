@@ -9,14 +9,14 @@ import SwiftUI
 
 @MainActor
 class HomeViewModel: ObservableObject {
-    @Published var components: [Component] = []
-    @Published var selectedComponent: Component?
-    
     @Published var name: String = ""
     @Published var type: ComponentsType = .motor
     @Published var serialNumber: String = ""
     @Published var version: String = ""
     @Published var status: DeviceStatus = .active
+    
+    @Published var components: [Component] = []
+    @Published var selectedComponent: Component?
     
     @Published var isSheetNewComponentVisible: Bool = false
     @Published var isSheetEditComponentVisible: Bool = false

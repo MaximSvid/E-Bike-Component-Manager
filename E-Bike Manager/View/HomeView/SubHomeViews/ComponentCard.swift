@@ -59,12 +59,13 @@ struct ComponentCard: View {
                         .shadow(radius: 3)
                 }
                 
-                Spacer()
+//                Spacer()
                 Text("Version: \(component.version)")
                     .font(.caption)
                     .foregroundStyle(.gray)
             }
-            .padding(.horizontal, 12)
+//            .padding(.horizontal, 12)
+//            .padding(.leading)
             .padding(.bottom)
         }
         .padding(.leading, 8)
