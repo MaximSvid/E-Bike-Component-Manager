@@ -5,6 +5,7 @@ E-Bike-Component-Manager ist eine iOS-Anwendung zur Verwaltung von E-Bike-Kompon
 
 ## ✨ Funktionen
 
+
 Erstellen: Neue E-Bike-Komponenten mit Details wie Name, Typ und Status hinzufügen.
 
 Beobachten: Echtzeit-Überwachung der Komponenten-Daten via Firebase.
@@ -16,6 +17,7 @@ Verarbeiten: Verwaltung und Analyse der gespeicherten Daten.
 Benutzeroberfläche: Moderne, benutzerfreundliche UI mit SwiftUI.
 
 ## 🛠 Technologien
+
 
 Framework: SwiftUI
 
@@ -32,6 +34,7 @@ Testing: Unit Tests für zentrale Funktionalitäten
 CI/CD: GitHub Actions für Continuous Integration/Deployment
 
 ## 📂 Projektstruktur
+
 
 Models: Datenmodelle für E-Bike-Komponenten.
 
